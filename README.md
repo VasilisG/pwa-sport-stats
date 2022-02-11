@@ -4,4 +4,4 @@ It's also a PWA app which you can install locally.
 
 ## Demo
 
-You can see a demo of the app [here](#).
+You can see a demo of the app [here](https://vasilisg.github.io/pwa-sport-stats/).
