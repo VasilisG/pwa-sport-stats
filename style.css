@@ -1,0 +1,347 @@
+@font-face {
+    font-family: "Score";
+    src: url('./assets/font/Score-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Score";
+    src: url('./assets/font/Score-Black.ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Score";
+    src: url('./assets/font/Score-Bold.ttf');
+    font-weight: bold;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background: url('./assets/images/background.jpg');
+    background-repeat: no-repeat;
+    font-family: Score;
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+input {
+    font-family: Score;
+}
+
+fieldset {
+    border: none;
+}
+
+input:focus, input:active, input:focus-visible {
+    outline: none;
+}
+
+::placeholder {
+    font-style: italic;
+    opacity: 0.3;
+}
+
+.uomTrack {
+    margin: 100px auto 20px auto;
+    padding: 25px 30px 15px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+}
+
+.uomTrack > thead, .uomTrack > tfoot {
+    line-height: 35px;
+}
+
+.uomTrack > thead > tr {
+    text-align: center;
+}
+
+.uom-field {
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: rgb(0,0,0);
+    border: 2px solid rgb(0,0,0);
+    box-sizing: border-box;
+    outline: 1px solid rgb(58, 58, 58);
+    height: 35px;
+    padding: 0px;
+}
+
+.uom-field-sorted {
+    background-color: rgb(79, 79, 79);
+}
+
+.uom-field:focus, .uom-field:focus-visible {
+    outline: 1px solid rgb(255,255,0);
+}
+
+.uom-sort-header {
+    background: rgb(32, 88, 121);
+    transition: 0.4s all ease;
+    position: relative;
+    user-select: none;
+}
+
+.uom-sort-header:not(.uom-active-sort):hover {
+    transition: 0.4s all ease;
+    background: rgb(204, 151, 107);
+}
+
+.uom-sort-header, .uom-action-duplicate, .uom-action-delete {
+    cursor: pointer;
+}
+
+.uom-active-sort {
+    background: rgb(184, 91, 15);
+    transition: 0.4s all ease;
+}
+
+.uom-sort-header.uom-active-sort[order="asc"]::after, .uom-sort-header.uom-active-sort[order="desc"]::after {
+    position: absolute;
+    right: 15px;
+    top: 4px;
+}
+
+.uom-sort-header.uom-active-sort[order="asc"]::after {
+    content: url('./assets/images/arrow-down.png');
+}
+
+.uom-sort-header.uom-active-sort[order="desc"]::after {
+    content: url('./assets/images/arrow-up.png');
+}
+
+.uom-scores-container {
+    text-align: center;
+}
+
+.uom-best-time, .uom-worst-time, .uom-avg-time {
+    text-shadow: 1px 0px 2px rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.uom-best-time {
+    color: rgb(49, 255, 6);
+}
+
+.uom-worst-time {
+    color: rgb(255, 0, 0);
+}
+
+.uom-avg-time {
+    color: rgb(255, 243, 155);
+}
+
+.uom-time-title {
+    text-shadow: 1px 0px 2px rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.uom-cell-duplicate, .uom-cell-delete {
+    text-align: center;
+    padding-left: 10px;
+}
+
+.uom-button-duplicate, .uom-button-delete {
+    width: 32px;
+    height: 32px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: 0.4s all ease;
+}
+
+.uom-button-duplicate {
+    background-image: url('./assets/images/duplicate.png');
+}
+
+.uom-button-delete {
+    background-image: url('./assets/images/delete.png');
+}
+
+.uom-button-duplicate:hover, .uom-button-delete:hover {
+    box-shadow: 0px 0px 4px 1px rgb(255, 255, 255);
+}
+
+.uomTrack caption {
+    padding: 20px 30px;
+    background: rgba(32, 88, 121, 0.5);
+    font-size: 24px;
+}
+
+.setup-overlay {
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay-disabled {
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+.initial-setup-modal {
+    width: 50%;
+    margin: auto;
+    background: rgb(19, 19, 19);
+    color: rgb(255,255,255);
+    padding: 25px 50px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.initial-setup-modal h2 {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(187, 183, 183);
+    margin-bottom: 30px;
+}
+
+.modal-button {
+    width: 140px;
+    height: 40px;
+    background: rgb(255,255,255);
+    border: none;
+    color: rgb(0,0,0);
+    font-weight: bold;
+    font-family: Score;
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+
+.modal-button:hover {
+    background: rgb(232, 195, 86);
+}
+
+.modal-button:active {
+    background: rgb(255, 232, 164);
+}
+
+.first-step {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(72, 69, 69);
+}
+
+.submit-setup-button {
+    float: right;
+}
+
+.setup-fieldset, .submit-button-container {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.setup-fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgb(72, 69, 69);
+    margin-bottom: 20px;
+}
+
+.setup-label {
+    margin-right: 5px;
+}
+
+.setup-field {
+    border: none;
+    background: none;
+    color: rgb(255,255,255);
+    border-bottom: 1px solid rgb(255,255,255);
+    padding: 5px;
+}
+
+.sport-name {
+    background: none;
+    color: rgb(255,255,255);
+    border: none;
+    border-bottom: 1px solid rgb(255,255,255);
+    font-family: Score;
+    padding: 5px;
+}
+
+.sport-option {
+    color: black;
+    font-size: 16px;
+}
+
+.athletes-field, .sport-name {
+    width: 250px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.table-setup-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.table-row-container {
+    margin-bottom: 5px;
+}
+
+.table-column-selector {
+    width: 50%;
+    margin: auto;
+    padding: 10px 20px 20px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(255,255,255);
+}
+
+.table-column-info {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+
+.column-selectors {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.column-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.column-selector > * {
+    cursor: pointer;
+}
+
+.column-hide {
+    display: none;
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Sport Stats",
+    "short_name": "Sport Stats",
+    "start_url": ".",
+    "display": "fullscreen",
+    "background_color": "#2a2a2a",
+    "description": "An app to create, edit and display athletes' stats of a sport.",
+    "icons": [
+        {
+            "src": "assets/images/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }, 
+        {
+            "src": "assets/images/icon256.png",
+            "sizes": "72x72 96x96 144x144 168x168 192x192 256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/icon32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+  }
+  

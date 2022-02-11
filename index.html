@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>UoM Track</title>
+
+        <link rel="shortcut icon" href="./assets/images/favicon.ico"/>
+        <link rel= "manifest" href= "manifest.webmanifest" />
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="service-worker-register.js" defer></script>
+        <script src="uomTrack.js" defer></script>
+        <script src="initSetup.js" defer></script>
+    </head>
+    <body>
+        <div id="overlay" class="setup-overlay overlay-disabled">
+            <div class="initial-setup-modal modal-disabled">
+                <h2>Initial setup</h2>
+                <form class="setup-form">
+                    <div class="first-step">
+                        <fieldset class="setup-fieldset">
+                            <div class="table-caption-container table-setup-container">
+                                <label for="tableCaption" class="setup-label caption-label">Sport: </label>
+                                <select id="sport-options" class="sport-name">
+                                    <option class="sport-option" value="-">- Select Sport -</option>
+                                    <option class="sport-option" value="100m Sprint">100m Sprint</option>
+                                    <option class="sport-option" value="200m Sprint">200m Sprint</option>
+                                    <option class="sport-option" value="400m Sprint">400m Sprint</option>
+                                    <option class="sport-option" value="100m Hurdles">100m Hurdles</option>
+                                    <option class="sport-option" value="5km Running">5km Running</option>
+                                    <option class="sport-option" value="10km Running">10km Running</option>
+                                </select>
+                            </div>
+                            <div class="table-row-container table-setup-container">
+                                <label for="tableRows" class="setup-label rows-label">Number of athletes: </label>
+                                <input id="athletes-input-field" type="text" placeholder="Total athletes e.g. 5, 8, ..." class="setup-field athletes-field" name="tableRows"/>
+                            </div>
+                        </fieldset>
+                        <div class="submit-button-container">
+                            <button type="submit" class="modal-button submit-setup-button">Create table</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
