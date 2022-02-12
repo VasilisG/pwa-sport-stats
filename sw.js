@@ -24,5 +24,11 @@ self.addEventListener('install', function (event) {
 });
 
 self.addEventListener('fetch', function (event) {
-    event.respondWith( caches.match(event.request) );
+    event.respondWith(async function() {
+        const cachedResponse = await caches.match(event.request);
+        if(cachedResponse){
+            return cachedResponse;
+        }
+        else return fetch(event.request);
+    }());
 });
