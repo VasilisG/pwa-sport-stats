@@ -237,10 +237,10 @@
         for(let i=0; i<numOfAthletes; i++){
             tableData.push({
                 'name'          : '-',
-                'age'           : '-',
-                'time'          : '-',
-                'appearances'   : '-',
-                'medals'        : '-',
+                'age'           : '0',
+                'time'          : '0.0',
+                'appearances'   : '0',
+                'medals'        : '0',
                 'country'       : '-'
             });
         }
