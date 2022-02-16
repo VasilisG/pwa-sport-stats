@@ -150,16 +150,25 @@
 
         function createEmptyRow(){
             let row = document.createElement('tr');
-            for(let i=0; i<6; i++){
-                let column = createEmptyCell();
-                row.appendChild(column);
-            }
+
+            let nameCell = createEmptyCell();
+            let ageCell = createEmptyCell('0');
+            let timeCell = createEmptyCell('0.0');
+            let appearancesCell = createEmptyCell('0');
+            let medalsCell = createEmptyCell('0');
+
+            row.appendChild(nameCell);
+            row.appendChild(ageCell);
+            row.appendChild(timeCell);
+            row.appendChild(appearancesCell);
+            row.appendChild(medalsCell);
+
             return row;
         }
 
-        function createEmptyCell(){
+        function createEmptyCell(value='-'){
             let column = document.createElement('td');
-            column.innerHTML = '-';
+            column.innerHTML = value;
             return column;
         }
 
