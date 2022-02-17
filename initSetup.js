@@ -156,12 +156,14 @@
             let timeCell = createEmptyCell('0.0');
             let appearancesCell = createEmptyCell('0');
             let medalsCell = createEmptyCell('0');
+            let countryCell = createEmptyCell();
 
             row.appendChild(nameCell);
             row.appendChild(ageCell);
             row.appendChild(timeCell);
             row.appendChild(appearancesCell);
             row.appendChild(medalsCell);
+            row.appendChild(countryCell);
 
             return row;
         }
