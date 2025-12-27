@@ -230,12 +230,17 @@
         let tBody = restoreBody(tableData);
         let tFoot = createTFoot();
 
+        let tableWrapper = document.createElement('div');
+        tableWrapper.classList.add('table-wrapper');
+
         table.appendChild(tCaption);
         table.appendChild(tHead);
         table.appendChild(tBody);
         table.appendChild(tFoot);
 
-        document.body.appendChild(table);
+        tableWrapper.appendChild(table);
+
+        document.body.appendChild(tableWrapper);
     }
 
     /**

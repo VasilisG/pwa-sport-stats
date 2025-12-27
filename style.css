@@ -345,3 +345,48 @@ input:focus, input:active, input:focus-visible {
 .column-hide {
     display: none;
 }
+
+@media screen and (max-width: 1400px) {
+    body {
+        overflow-x: auto;
+    }
+
+}
+
+@media screen and (max-width: 1068px) {
+    .initial-setup-modal {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .column-selectors {
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .table-setup-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .table-setup-container:last-child {
+        margin-top: 20px;
+    }
+
+    .table-column-selector {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .initial-setup-modal {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+}
